@@ -31,3 +31,6 @@ stdMeanData$ActivityLabel <- factor(stdMeanData$Activity, levels=activityLabels$
 
 ## Create a second, independent tidy data set with the average of each variable for each activity and each subject
 tidyData <- ddply(stdMeanData, .(ID, Activity, ActivityLabel), .fun=function(x){ colMeans(x[,-c(1,2,82)]) })
+
+## Write the tidy dataset in a text file using the write.table function
+write.table(tidyData, file = "./tidy_data.txt",row.names=FALSE)
