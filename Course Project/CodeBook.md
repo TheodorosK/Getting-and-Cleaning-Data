@@ -96,6 +96,22 @@ Additional vectors obtained by averaging the signals in a signal window sample. 
 
 For more information about this dataset contact: activityrecognition@smartlab.ws
 
+##About the script and the tidy dataset
+-------------------------------------
+The scripr run_analysis.R carris out the following activities:
+
+  * 1. Loads the plyr library
+  * 2. Reads the following 2 files and stores the data in 2 data frames:
+      * 'features.txt': List of all features.
+      * 'activity_labels.txt': Links the class labels with their activity name.
+  * 3. It then reads the test and train data sets (separately) and appropriately labels the dataset with descriptive variable names based on the Feature Names and the Activity Labels extracted from Step 2
+  * 4. It merges the two datasets and then
+  * 5. Creates another data set by extracting from the the merged dataset only the measurements on the mean and standard deviation for each measurement
+  * 6. It then creates a new column with a more descriptive activity names to name the activities ids in the original dataset
+  * 7. Finally, it splits the new dataset created in Step 5 and 6 by the (ID, Activity, ActivityLabel) columns and applys a function that calculates the column mean for each and every X and Y feature in the dataset and then binds the results in 1 single dataframe
+  * 8. The last piece of the code simply writes the results of the tidy dataset created in Step 7 in a TXT file, each column separated by whitespace
+
+
 ## License
 
 Use of this dataset in publications must be acknowledged by referencing the following publication [1] 
